@@ -7,7 +7,7 @@ import Contact from './pages/Contact';
 import Product from './pages/Product';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-
+import * as ReactDOM from "react-dom";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,6 +18,20 @@ const queryClient = new QueryClient({
 });
 
 const router = createBrowserRouter([
+
+  {
+    path: '/',
+    element: <HomeLayout />,
+  },
+  {
+    path: '/about',
+    element: <About />,
+  },
+  {
+    path: '/contact',
+    element: <Contact />,
+  },
+  /*
   {
     path: '/',
     element: <HomeLayout />,
@@ -40,18 +54,23 @@ const router = createBrowserRouter([
       },
     ]
   }
+  */
 ])
 
 
-function App() {
-  return (
-    <>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />;
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
-    </>
-  )
-}
+// function App() {
+//   return (
+//     <>
+//     <QueryClientProvider client={queryClient}>
+//       <RouterProvider router={router} />;
+//       <ReactQueryDevtools initialIsOpen={false} />
+//     </QueryClientProvider>
+//     </>
+//   )
+// }
 
-export default App
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
+
+export default App;
