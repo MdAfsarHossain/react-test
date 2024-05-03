@@ -9,11 +9,11 @@ import Product from './pages/Product';
 
 const router = createBrowserRouter([
   {
-    path: '',
+    path: '/',
     element: <HomeLayout />,
     children: [
       {
-        index: false,
+        index: true,
         element: <Landing />,
       },
       {
