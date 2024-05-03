@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     children: [
       {
-        // index: true,
+        index: true,
         element: <Landing />,
       },
       {
@@ -24,12 +24,13 @@ const router = createBrowserRouter([
         path: 'contact',
         element: <Contact />,
       },
+      {
+        path: '/product',
+        element: <Product />,
+      },
     ]
   },
-  {
-    path: '/product',
-    element: <Product />,
-  },
+
 ])
 
 
