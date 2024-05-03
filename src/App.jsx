@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     children: [
       {
-        index: true,
+        // index: true,
         element: <Landing />,
       },
       {
