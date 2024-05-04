@@ -5,20 +5,20 @@ import Landing from './pages/Landing';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Product from './pages/Product';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import * as ReactDOM from "react-dom";
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+// import * as ReactDOM from "react-dom";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 1000 * 60 * 120,
-    },
-  },
-});
+// const queryClient = new QueryClient({
+//   defaultOptions: {
+//     queries: {
+//       staleTime: 1000 * 60 * 120,
+//     },
+//   },
+// });
 
 const router = createBrowserRouter([
-
+/*
   {
     path: '/',
     element: <HomeLayout />,
@@ -31,7 +31,8 @@ const router = createBrowserRouter([
     path: '/contact',
     element: <Contact />,
   },
-  /*
+  */
+//  /*
   {
     path: '/',
     element: <HomeLayout />,
@@ -48,29 +49,26 @@ const router = createBrowserRouter([
         path: 'contact',
         element: <Contact />,
       },
-      {
-        path: 'product',
-        element: <Product />,
-      },
     ]
-  }
-  */
+  },
+  {
+    path: 'product',
+    element: <Product />,
+  },
+  // */
 ])
 
 
-// function App() {
-//   return (
-//     <>
-//     <QueryClientProvider client={queryClient}>
-//       <RouterProvider router={router} />;
-//       <ReactQueryDevtools initialIsOpen={false} />
-//     </QueryClientProvider>
-//     </>
-//   )
-// }
+function App() {
+  return (
+    <>
+       <RouterProvider router={router} />;
+    </>
+  )
+}
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
-);
+// ReactDOM.createRoot(document.getElementById("root")).render(
+  // <RouterProvider router={router} />
+// );
 
 export default App;
